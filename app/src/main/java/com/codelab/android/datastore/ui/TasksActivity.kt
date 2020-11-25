@@ -52,7 +52,10 @@ class TasksActivity : AppCompatActivity() {
             adapter.submitList(tasksUiModel.tasks)
             updateSort(tasksUiModel.sortOrder)
             binding.showCompletedSwitch.isChecked = tasksUiModel.showCompleted
+            binding.counter.text = tasksUiModel.counter.toString()
         }
+
+        viewModel.increaseCounter()
     }
 
     private fun setupFilterListeners(viewModel: TasksViewModel) {
@@ -80,8 +83,8 @@ class TasksActivity : AppCompatActivity() {
 
     private fun updateSort(sortOrder: UserPreferences.SortOrder) {
         binding.sortDeadline.isChecked =
-            sortOrder == UserPreferences.SortOrder.BY_DEADLINE || sortOrder ==  UserPreferences.SortOrder.BY_DEADLINE_AND_PRIORITY
+            sortOrder == UserPreferences.SortOrder.BY_DEADLINE || sortOrder == UserPreferences.SortOrder.BY_DEADLINE_AND_PRIORITY
         binding.sortPriority.isChecked =
-            sortOrder ==  UserPreferences.SortOrder.BY_PRIORITY || sortOrder ==  UserPreferences.SortOrder.BY_DEADLINE_AND_PRIORITY
+            sortOrder == UserPreferences.SortOrder.BY_PRIORITY || sortOrder == UserPreferences.SortOrder.BY_DEADLINE_AND_PRIORITY
     }
 }
