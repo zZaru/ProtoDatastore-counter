@@ -33,6 +33,7 @@ import java.io.IOException
 private const val USER_PREFERENCES_NAME = "user_preferences"
 private const val SORT_ORDER_KEY = "sort_order"
 
+//Initial commit
 /*enum class SortOrder {
     NONE,
     BY_DEADLINE,
