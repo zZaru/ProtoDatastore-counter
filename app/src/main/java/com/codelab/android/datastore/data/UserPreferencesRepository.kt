@@ -87,7 +87,8 @@ class UserPreferencesRepository private constructor(context: Context) {
     }
     suspend fun increaseCounter(counter: Int)
     {
-
+        dataStore.updateData { preferences ->
+            preferences.toBuilder().setCounter(counter).build() }
     }
 
     private val sharedPreferences =
