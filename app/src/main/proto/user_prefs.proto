@@ -6,7 +6,7 @@ option java_multiple_files = true;
 message UserPreferences {
   // filter for showing / hiding completed tasks
   bool show_completed = 1;
-
+  int32 counter = 3;
   // defines tasks sorting order: no order, by deadline, by priority, by deadline and priority
   enum SortOrder {
     UNSPECIFIED = 0;
@@ -15,7 +15,6 @@ message UserPreferences {
     BY_PRIORITY = 3;
     BY_DEADLINE_AND_PRIORITY = 4;
   }
-
   // user selected tasks sorting order
   SortOrder sort_order = 2;
 }

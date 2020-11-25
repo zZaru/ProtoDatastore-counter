@@ -83,8 +83,12 @@ class UserPreferencesRepository private constructor(context: Context) {
         dataStore.updateData { preferences ->
             preferences.toBuilder().setShowCompleted(completed).build()
         }
-    }
 
+    }
+    suspend fun increaseCounter(counter: Int)
+    {
+
+    }
 
     private val sharedPreferences =
         context.applicationContext.getSharedPreferences(USER_PREFERENCES_NAME, Context.MODE_PRIVATE)
@@ -189,6 +193,7 @@ class UserPreferencesRepository private constructor(context: Context) {
             putString(SORT_ORDER_KEY, sortOrder.name)
         }
     }
+
 
     companion object {
         @Volatile
