@@ -21,7 +21,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.observe
 import androidx.recyclerview.widget.DividerItemDecoration
-import com.codelab.android.datastore.data.SortOrder
+import com.codelab.android.datastore.UserPreferences
+//import com.codelab.android.datastore.data.SortOrder
 import com.codelab.android.datastore.data.TasksRepository
 import com.codelab.android.datastore.data.UserPreferencesRepository
 import com.codelab.android.datastore.databinding.ActivityTasksBinding
@@ -78,10 +79,10 @@ class TasksActivity : AppCompatActivity() {
         }
     }
 
-    private fun updateSort(sortOrder: SortOrder) {
+    private fun updateSort(sortOrder: UserPreferences.SortOrder) {
         binding.sortDeadline.isChecked =
-            sortOrder == SortOrder.BY_DEADLINE || sortOrder == SortOrder.BY_DEADLINE_AND_PRIORITY
+            sortOrder == UserPreferences.SortOrder.BY_DEADLINE || sortOrder ==  UserPreferences.SortOrder.BY_DEADLINE_AND_PRIORITY
         binding.sortPriority.isChecked =
-            sortOrder == SortOrder.BY_PRIORITY || sortOrder == SortOrder.BY_DEADLINE_AND_PRIORITY
+            sortOrder ==  UserPreferences.SortOrder.BY_PRIORITY || sortOrder ==  UserPreferences.SortOrder.BY_DEADLINE_AND_PRIORITY
     }
 }
